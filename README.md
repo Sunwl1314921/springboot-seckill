@@ -14,9 +14,9 @@
 
 * 启动前，请配置好 [application.yml]中连接数据库的用户名和密码，以及Redis服务器的地址和端口信息。
 
-* 启动前，请创建数据库`seckill`，建表SQL语句放在：[/db/sys_schema.sql]具体的建表和建库语句请仔细看SQL文件。
+* 启动前，请创建数据库，建表SQL语句放在：[/db/sys_schema.sql]具体的建表和建库语句请仔细看SQL文件。
 
-* 配置完成后，运行位于 `src/main/cn/tycoding/`下的SpringbootSeckillApplication中的main方法，访问 `http://localhost:8080/` 进行API测试。
+* 配置完成后，运行SpringbootSeckillApplication中的main方法，访问 `http://localhost:8080/` 进行API测试。
 
 * 注意[/db/sys_data.sql]中秒杀商品的日期可能要修改，自行修改为符合商品秒杀条件的时间即可。
 

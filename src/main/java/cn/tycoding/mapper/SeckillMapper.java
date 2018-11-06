@@ -3,13 +3,14 @@ package cn.tycoding.mapper;
 import cn.tycoding.entity.Seckill;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.Date;
 import java.util.List;
 
 /**
- * @auther TyCoding
- * @date 2018/10/6
+ * SeckillMapper
  */
 @Mapper
 public interface SeckillMapper {
@@ -19,6 +20,8 @@ public interface SeckillMapper {
      *
      * @return
      */
+    @Select("SELECT * FROM seckill")
+    @ResultMap("SeckillResultMap")
     List<Seckill> findAll();
 
     /**
@@ -27,6 +30,8 @@ public interface SeckillMapper {
      * @param id
      * @return
      */
+    @Select("SELECT * FROM seckill WHERE seckill_id = #{id}")
+    @ResultMap("SeckillResultMap")
     Seckill findById(long id);
 
     /**

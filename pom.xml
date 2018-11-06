@@ -82,7 +82,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
+        <!--@Data 注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
     </dependencies>
 
     <build>

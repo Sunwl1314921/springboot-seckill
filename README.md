@@ -48,7 +48,6 @@ SpringBoot不是对Spring功能上的增强，而是提供了一种快速使用S
     │   │           ├── controller  -- MVC的web层
     │   │           ├── dto  -- 统一封装的一些结果属性，和entity类似
     │   │           ├── entity  -- 实体类
-    │   │           ├── enums  -- 手动定义的字典枚举参数
     │   │           ├── exception  -- 统一的异常结果
     │   │           ├── mapper  -- Mybatis-Mapper层映射接口，或称为DAO层
     │   │           ├── redis  -- redis,jedis 相关配置

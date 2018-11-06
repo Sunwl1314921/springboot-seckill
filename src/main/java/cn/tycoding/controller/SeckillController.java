@@ -1,10 +1,9 @@
 package cn.tycoding.controller;
 
-import cn.tycoding.dto.Exposer;
-import cn.tycoding.dto.SeckillExecution;
-import cn.tycoding.dto.SeckillResult;
-import cn.tycoding.entity.Seckill;
-import cn.tycoding.enums.SeckillStatEnum;
+import cn.tycoding.VO.Exposer;
+import cn.tycoding.VO.SeckillExecution;
+import cn.tycoding.VO.SeckillResult;
+import cn.tycoding.bean.Seckill;
 import cn.tycoding.exception.RepeatKillException;
 import cn.tycoding.exception.SeckillCloseException;
 import cn.tycoding.exception.SeckillException;
@@ -22,9 +21,7 @@ import java.util.List;
 
 /**
  * 秒杀商品的控制层
- *
- * @auther TyCoding
- * @date 2018/10/6
+ * learning
  */
 @Controller
 @RequestMapping("/seckill")
@@ -76,6 +73,11 @@ public class SeckillController {
         return result;
     }
 
+    /**
+     * 注意此处的
+     * @CookieValue 默认第一次获取第一次输入的手机号 保存在cookie
+     * 要想重新输入手机号  需要删除cookie 重新加载
+     */
     @RequestMapping(value = "/{seckillId}/{md5}/execution",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
@@ -91,13 +93,13 @@ public class SeckillController {
             SeckillExecution execution = seckillService.executeSeckill(seckillId, money, userPhone, md5);
             return new SeckillResult<SeckillExecution>(true, execution);
         } catch (RepeatKillException e) {
-            SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStatEnum.REPEAT_KILL);
+            SeckillExecution seckillExecution = new SeckillExecution(seckillId, Seckill.SeckillStatEnum.REPEAT_KILL);
             return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (SeckillCloseException e) {
-            SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStatEnum.END);
+            SeckillExecution seckillExecution = new SeckillExecution(seckillId, Seckill.SeckillStatEnum.END);
             return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (SeckillException e) {
-            SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStatEnum.INNER_ERROR);
+            SeckillExecution seckillExecution = new SeckillExecution(seckillId, Seckill.SeckillStatEnum.INNER_ERROR);
             return new SeckillResult<SeckillExecution>(true, seckillExecution);
         }
     }

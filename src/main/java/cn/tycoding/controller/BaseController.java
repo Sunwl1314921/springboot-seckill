@@ -17,7 +17,7 @@ public class BaseController {
      *
      * @return
      */
-    @RequestMapping("/seckill")
+    @RequestMapping("/")
     public String seckillGoods() {
         return "redirect:/seckill/list";
     }

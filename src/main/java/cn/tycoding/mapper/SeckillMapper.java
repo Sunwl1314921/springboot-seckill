@@ -1,6 +1,6 @@
 package cn.tycoding.mapper;
 
-import cn.tycoding.entity.Seckill;
+import cn.tycoding.bean.Seckill;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultMap;

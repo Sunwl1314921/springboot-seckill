@@ -1,7 +1,7 @@
-package cn.tycoding.dto;
+package cn.tycoding.VO;
 
-import cn.tycoding.entity.Seckill;
-import cn.tycoding.entity.SeckillOrder;
+import cn.tycoding.bean.Seckill;
+import cn.tycoding.bean.SeckillOrder;
 import lombok.Data;
 
 /**

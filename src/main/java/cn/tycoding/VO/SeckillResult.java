@@ -1,4 +1,4 @@
-package cn.tycoding.dto;
+package cn.tycoding.VO;
 
 import lombok.Data;
 

@@ -22,6 +22,8 @@ var seckill = {
     },
     //处理秒杀逻辑
     handleSeckill: function(seckillId, node, money){
+        debugger
+
         //获取秒杀地址，控制显示逻辑，执行秒杀
         node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">开始秒杀</button>');
         $.post(seckill.URL.exposer(seckillId), {}, function(result){

@@ -1,6 +1,6 @@
 package cn.tycoding.mapper;
 
-import cn.tycoding.entity.SeckillOrder;
+import cn.tycoding.bean.SeckillOrder;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

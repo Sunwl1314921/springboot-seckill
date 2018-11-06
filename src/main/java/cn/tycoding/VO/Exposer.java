@@ -1,9 +1,9 @@
-package cn.tycoding.dto;
+package cn.tycoding.VO;
 
 import lombok.Data;
 
 /**
- * 暴露秒杀地址DTO
+ * 暴露秒杀地址VO
  */
 @Data
 public class Exposer {
